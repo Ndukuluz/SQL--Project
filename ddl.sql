@@ -1,0 +1,20 @@
+CREATE DATABASE librarydb;
+USE librarydb;
+
+CREATE TABLE Books (
+BookID INT AUTO_INCREMENT PRIMARY KEY,
+Title VARCHAR(100),
+Author VARCHAR(100),
+Genre VARCHAR(50),
+YearPublished INT
+);
+
+
+CREATE TABLE Borrowers(
+BorrowID INT AUTO_INCREMENT PRIMARY KEY,
+BookID INT ,
+BorrowerName VARCHAR(100) NOT NULL,
+BorrowDate DATE,
+ReturnDate DATE,
+FOREIGN KEY (BookID) REFERENCES Books(BookID)
+);
